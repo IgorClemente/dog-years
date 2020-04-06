@@ -29,7 +29,7 @@
 import UIKit
 
 class InfoViewController: UIViewController {
-	@IBOutlet private weak var txtInfo: UITextView!
+	@IBOutlet internal weak var txtInfo: UITextView?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +53,7 @@ class InfoViewController: UIViewController {
 			if let data = data {
 				guard let txt = try? NSAttributedString(data: data, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.rtf], documentAttributes: nil) else { return }
 				DispatchQueue.main.async {
-					self.txtInfo.attributedText = txt
+                    self.txtInfo?.attributedText = txt
 				}
 			}
 		}

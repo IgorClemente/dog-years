@@ -49,6 +49,36 @@ class DogYearsTests: XCTestCase {
         XCTAssert(res3 != res2 && res3 == 0.0, "Calculator clear operation failed")
     }
     
+    func testLoadInfoView() {
+        let st = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        XCTAssertNotNil(st , "Could not instantiate storyboard for Info View content loading")
+        
+        guard let vc = st.instantiateViewController(identifier: "InformationView") as? InfoViewController else {
+            XCTAssert(false, "Could not instantiate storyboard for Info View content loading")
+            return
+        }
+        
+        _ = vc.view
+        
+        guard let txt = vc.txtInfo?.text else {
+            XCTAssert(false, "Could not get initial text content for Info View content loading")
+            return
+        }
+        
+        vc.loadContent()
+        
+        let pred = NSPredicate(format: "text != %@", txt)
+        let exp = expectation(for: pred, evaluatedWith: vc.txtInfo, handler: nil)
+        let result = XCTWaiter.wait(for: [exp], timeout: 5.0)
+        
+        XCTAssert(result == XCTWaiter.Result.completed, "Loading content for Info View did not change")
+    }
+    
+    func testLoadInfoView2() {
+        
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         measure {
