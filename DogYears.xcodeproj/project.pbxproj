@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C44956A9243C05170026C085 /* URLSessionDataTaskProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44956A8243C05170026C085 /* URLSessionDataTaskProtocol.swift */; };
+		C44956AB243C06CA0026C085 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44956AA243C06CA0026C085 /* URLSessionProtocol.swift */; };
 		C45B6CDF24367E740095839F /* DogYearsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45B6CDE24367E740095839F /* DogYearsTests.swift */; };
 		DD095FC71FA08EA200439546 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD095FC61FA08EA200439546 /* Type.swift */; };
 		DD0FC24C1F973170003495E0 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FC24B1F973170003495E0 /* Calculator.swift */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C44956A8243C05170026C085 /* URLSessionDataTaskProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskProtocol.swift; sourceTree = "<group>"; };
+		C44956AA243C06CA0026C085 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		C45B6CDC24367E740095839F /* DogYearsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogYearsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45B6CDE24367E740095839F /* DogYearsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogYearsTests.swift; sourceTree = "<group>"; };
 		C45B6CE024367E740095839F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -123,6 +127,8 @@
 				DD7F8B131F96F98C00456B70 /* Views */,
 				DD5CAC421F970DF800631B7E /* Utility */,
 				DDED15B31F96E484000C1150 /* AppDelegate.swift */,
+				C44956A8243C05170026C085 /* URLSessionDataTaskProtocol.swift */,
+				C44956AA243C06CA0026C085 /* URLSessionProtocol.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -323,7 +329,9 @@
 				DDED15B61F96E484000C1150 /* MenuViewController.swift in Sources */,
 				DD5CAC3B1F970ABB00631B7E /* CalculatorViewController.swift in Sources */,
 				DDED15B41F96E484000C1150 /* AppDelegate.swift in Sources */,
+				C44956A9243C05170026C085 /* URLSessionDataTaskProtocol.swift in Sources */,
 				DD9E69E51FA1E2A100388647 /* Theme.swift in Sources */,
+				C44956AB243C06CA0026C085 /* URLSessionProtocol.swift in Sources */,
 				DD9E69E31FA1E21D00388647 /* Themes.swift in Sources */,
 				DD9E69DD1FA1C2AD00388647 /* ThemeCell.swift in Sources */,
 				DD9E69E11FA1E06D00388647 /* UIColor-Extras.swift in Sources */,

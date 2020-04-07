@@ -31,10 +31,10 @@ import Foundation
 class HTTPClient {
 	static let shared = HTTPClient()
 	
-	private let session = URLSession.shared
+    private let session: URLSessionProtocol
 	
-	private init() {
-		
+    init(session: URLSessionProtocol) {
+        self.session = session
 	}
 	
 	// MARK:- Public Methods
