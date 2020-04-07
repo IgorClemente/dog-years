@@ -95,7 +95,12 @@ class DogYearsTests: XCTestCase {
     
     func testInfoLoading() {
         let url = "https://raw.githubusercontent.com/FahimF/Test/master/DogYears-Info.rtf"
-        HTTPClient.shared.get(url: url) { (data, error) in
+        
+        let session = MockSession()
+        
+        let client = HTTPClient(session: session)
+        
+        client.get(url: url) { (data, error) in
             self.resData = data
         }
         

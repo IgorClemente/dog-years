@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C44956A9243C05170026C085 /* URLSessionDataTaskProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44956A8243C05170026C085 /* URLSessionDataTaskProtocol.swift */; };
 		C44956AB243C06CA0026C085 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44956AA243C06CA0026C085 /* URLSessionProtocol.swift */; };
+		C44956AD243C0E480026C085 /* MockSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44956AC243C0E480026C085 /* MockSession.swift */; };
+		C44956AF243C0EE50026C085 /* MockDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44956AE243C0EE50026C085 /* MockDataTask.swift */; };
 		C45B6CDF24367E740095839F /* DogYearsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45B6CDE24367E740095839F /* DogYearsTests.swift */; };
 		DD095FC71FA08EA200439546 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD095FC61FA08EA200439546 /* Type.swift */; };
 		DD0FC24C1F973170003495E0 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FC24B1F973170003495E0 /* Calculator.swift */; };
@@ -50,6 +52,8 @@
 /* Begin PBXFileReference section */
 		C44956A8243C05170026C085 /* URLSessionDataTaskProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskProtocol.swift; sourceTree = "<group>"; };
 		C44956AA243C06CA0026C085 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		C44956AC243C0E480026C085 /* MockSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSession.swift; sourceTree = "<group>"; };
+		C44956AE243C0EE50026C085 /* MockDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataTask.swift; sourceTree = "<group>"; };
 		C45B6CDC24367E740095839F /* DogYearsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogYearsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45B6CDE24367E740095839F /* DogYearsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogYearsTests.swift; sourceTree = "<group>"; };
 		C45B6CE024367E740095839F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				DDED15B31F96E484000C1150 /* AppDelegate.swift */,
 				C44956A8243C05170026C085 /* URLSessionDataTaskProtocol.swift */,
 				C44956AA243C06CA0026C085 /* URLSessionProtocol.swift */,
+				C44956AC243C0E480026C085 /* MockSession.swift */,
+				C44956AE243C0EE50026C085 /* MockDataTask.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -319,6 +325,8 @@
 				DD5CAC391F96FD3F00631B7E /* Menu.swift in Sources */,
 				DD7F8B1B1F96FB7E00456B70 /* MenuCell.swift in Sources */,
 				DD0FC24C1F973170003495E0 /* Calculator.swift in Sources */,
+				C44956AF243C0EE50026C085 /* MockDataTask.swift in Sources */,
+				C44956AD243C0E480026C085 /* MockSession.swift in Sources */,
 				DD0FC2501F97516F003495E0 /* RoundedLabel.swift in Sources */,
 				DD095FC71FA08EA200439546 /* Type.swift in Sources */,
 				DD2221451FB35249000D86F9 /* HTTPClient.swift in Sources */,

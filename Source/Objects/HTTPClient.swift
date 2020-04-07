@@ -29,7 +29,6 @@
 import Foundation
 
 class HTTPClient {
-	static let shared = HTTPClient()
 	
     private let session: URLSessionProtocol
 	

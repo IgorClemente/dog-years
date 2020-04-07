@@ -43,7 +43,11 @@ class InfoViewController: UIViewController {
     
 	func loadContent() {
 		let url = "https://raw.githubusercontent.com/FahimF/Test/master/DogYears-Info.rtf"
-		HTTPClient.shared.get(url: url) {(data, error) in
+        
+        let session = URLSession.shared
+        let client = HTTPClient(session: session)
+        
+        client.get(url: url) {(data, error) in
 			// Was there an error?
 			if let error = error {
 				NSLog("Error: \(error)")
