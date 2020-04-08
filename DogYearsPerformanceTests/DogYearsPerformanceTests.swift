@@ -23,6 +23,7 @@ class DogYearsPerformanceTests: XCTestCase {
         var menu =  Menu()
         
         measure {
+            // Set average
             menu.loadDefaultMenu()
         }
     }
