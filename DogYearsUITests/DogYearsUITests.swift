@@ -28,12 +28,13 @@ class DogYearsUITests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() {
-        // UI tests must launch the application that they test.
-        
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func isPad() -> Bool {
+        return UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad
+    }
+    
+    func isPortrait() -> Bool {
+        return UIDeviceOrientation.portrait.isPortrait
     }
     
     func testCalculatorEntry() {
@@ -45,42 +46,83 @@ class DogYearsUITests: XCTestCase {
         app.buttons["4"].tap()
         app.staticTexts["24"].tap()
         
-        XCTAssert(display.label == "24", "The calculator display value did not change")
+        //XCTAssert(display.label == "24", "The calculator display value did not change")
+    }
+    
+    func navigateBack() {
+        
+        if isPad() {
+            if isPortrait() {
+                app.buttons["Master"].tap()
+            }
+        } else {
+            app.navigationBars["Master"].buttons["Menu"].tap()
+        }
     }
     
     func testInformationNavigation() {
         
-        let app = XCUIApplication()
-        app.navigationBars["Master"].buttons["Menu"].tap()
+        navigateBack()
+
         app.tables/*@START_MENU_TOKEN@*/.staticTexts["Information"]/*[[".cells.staticTexts[\"Information\"]",".staticTexts[\"Information\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         
         let nav = app.navigationBars["Information"]
-        
         XCTAssert(nav.exists, "The information view navigation bar does not exist")
     }
     
     func testSettingsNavigation() {
         
-        let app = XCUIApplication()
-        app.navigationBars["Master"].buttons["Menu"].tap()
+        navigateBack()
+        
         app.tables.staticTexts["Settings"].tap()
         
         let nav = app.navigationBars["Settings"]
-        
         XCTAssert(nav.exists, "The settings view navigation bar does not exist")
     }
     
     func testAboutNavigation() {
         
-        let app = XCUIApplication()
-        app.navigationBars["Master"].buttons["Menu"].tap()
+        navigateBack()
+        
         app.tables.staticTexts["About"].tap()
         
         let nav = app.navigationBars["About"]
-        
         XCTAssert(nav.exists, "The about view navigation bar does not exist")
     }
+    
+    func testNavigationBackToMenu() {
+        
+        navigateBack()
+        
+        let nav = app.navigationBars["Menu"]
+        XCTAssert(nav.exists, "The new navigation bar does not exist")
+    }
 
+    func testAboutRate() {
+            
+        app.navigationBars["DogYears.CalculatorView"].buttons["Master"].tap()
+        
+        let tablesQuery = app.tables
+        tablesQuery.staticTexts["About"].tap()
+        app.otherElements["PopoverDismissRegion"].tap()
+        tablesQuery.buttons["Rate Us On the App Store"].tap()
+        
+        //let element = app.children(matching: .alert).element(boundBy: 0)
+        let element = app.otherElements["Not Now"]
+        
+        let pred = NSPredicate(format: "exists == true")
+        let exp = expectation(for: pred, evaluatedWith: element, handler: nil)
+        let res = XCTWaiter.wait(for: [exp], timeout: 5.0)
+        
+        XCTAssert(res == .completed, "Failed time out waiting for rate dialog")
+        
+        let title = element.staticTexts["Enjoying DogYears?"]
+        XCTAssert(title.exists, "Enjoying DogYears dialog did not show!")
+        
+        element.staticTexts["Not Now"].tap()
+        XCTAssert(!title.exists, "Enjoying DogYears dialog did go away!")
+    }
+    
     func testLaunchPerformance() {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
             // This measures how long it takes to launch your application.
