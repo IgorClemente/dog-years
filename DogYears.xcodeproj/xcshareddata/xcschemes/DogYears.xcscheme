@@ -30,7 +30,7 @@
       codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C45B6CDB24367E740095839F"
@@ -46,6 +46,16 @@
                BlueprintIdentifier = "C45F3F2C243D57D900B04854"
                BuildableName = "DogYearsPerformanceTests.xctest"
                BlueprintName = "DogYearsPerformanceTests"
+               ReferencedContainer = "container:DogYears.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C45F3F3A243E865200B04854"
+               BuildableName = "DogYearsUITests.xctest"
+               BlueprintName = "DogYearsUITests"
                ReferencedContainer = "container:DogYears.xcodeproj">
             </BuildableReference>
          </TestableReference>
