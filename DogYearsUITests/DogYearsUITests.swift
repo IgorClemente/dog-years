@@ -19,7 +19,9 @@ class DogYearsUITests: XCTestCase {
         continueAfterFailure = false
         
         let app = XCUIApplication()
+        
         self.app = app
+        
         app.launch()
         
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
@@ -107,9 +109,10 @@ class DogYearsUITests: XCTestCase {
         app.otherElements["PopoverDismissRegion"].tap()
         tablesQuery.buttons["Rate Us On the App Store"].tap()
         
-        //let element = app.children(matching: .alert).element(boundBy: 0)
-        let element = app.otherElements["Not Now"]
-        
+        let element = app.children(matching: .other).alerts.firstMatch
+                
+        print(app.alerts)
+            
         let pred = NSPredicate(format: "exists == true")
         let exp = expectation(for: pred, evaluatedWith: element, handler: nil)
         let res = XCTWaiter.wait(for: [exp], timeout: 5.0)
@@ -118,7 +121,7 @@ class DogYearsUITests: XCTestCase {
         
         let title = element.staticTexts["Enjoying DogYears?"]
         XCTAssert(title.exists, "Enjoying DogYears dialog did not show!")
-        
+    
         element.staticTexts["Not Now"].tap()
         XCTAssert(!title.exists, "Enjoying DogYears dialog did go away!")
     }
